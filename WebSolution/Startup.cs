@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScenarioSolution;
+using TestRunner;
 
 namespace WebSolution
 {
@@ -33,6 +35,10 @@ namespace WebSolution
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // Dependency injection middleware
+            services.AddSingleton<IUtilities, Utilities>();
+            services.AddTransient<IEvenCalculator, EvenCalculator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,6 +6,11 @@ namespace WebSolution.Controllers
 {
     public abstract class controllerBase : Controller
     {
+        protected void addHomeToBreadCrumb()
+        {
+            addBreadCrumb("Home", "Index", "Home");
+        }
+
         protected void addBreadCrumb(string label, string action, string controller)
         {
             IList<Breadcrumb> crumbs;

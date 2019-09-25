@@ -33,10 +33,5 @@ namespace WebSolution.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        private void addHomeToBreadCrumb()
-        {
-            base.addBreadCrumb("Home", "Index", "Home");
-        }
     }
 }
